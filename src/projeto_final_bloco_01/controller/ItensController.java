@@ -9,12 +9,32 @@ import projeto_final_bloco_01.repository.ItensRepository;
 public class ItensController implements ItensRepository{
 
 	private List<Itens> listaItens = new ArrayList<Itens>();
+	private List<Itens> listaBodyCare = new ArrayList<Itens>();
+	private List<Itens> listaSkinCare = new ArrayList<Itens>();
+	private List<Itens> listaMaquiagens = new ArrayList<Itens>();
 	static int numId = 0;
 	
 	@Override
 	public void cadastrarItem(Itens item) {
-		listaItens.add(item);
-		System.out.println("🎉 Item cadastrado com sucesso! 🎉");
+		
+		switch(item.getTipo()) {
+			case 1 -> {
+			listaBodyCare.add(item);
+			listaItens.add(item);
+			System.out.println("🎉 Item cadastrado com sucesso! 🎉");
+			}
+			case 2 -> {
+				listaSkinCare.add(item);
+				listaItens.add(item);
+				System.out.println("🎉 Item cadastrado com sucesso! 🎉");
+			}
+			case 3 -> {
+				listaMaquiagens.add(item);
+				listaItens.add(item);
+				System.out.println("🎉 Item cadastrado com sucesso! 🎉");
+			}
+			default -> System.out.println("Tipo inexistente!");
+		}
 	}
 
 	@Override
@@ -76,5 +96,29 @@ public class ItensController implements ItensRepository{
 	public static int gerarId() {
 		return ++numId;
 	}
+
+	public void listarPorCategoria(int categoria) {
+
+		switch(categoria) {
+			case 1 -> {
+			for(var item : listaBodyCare) {
+				item.visualizar();
+				}
+			}
+			case 2 -> {
+				for(var item : listaSkinCare) {
+					item.visualizar();
+				}
+			}
+			case 3 -> {
+				for(var item : listaMaquiagens) {
+					item.visualizar();
+				}
+			}
+			default -> System.out.println("Categoria inexistente! ");
+		}
+		
+	}
+
 
 }

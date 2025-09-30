@@ -40,6 +40,7 @@ public class Menu {
 		System.out.println("              3 - Buscar Item por ID               ");
 		System.out.println("              4 - Atualizar Dados do Item          ");
 		System.out.println("              5 - Apagar Item                      ");
+		System.out.println("              6 - Listar Itens por Categoria       ");
 		System.out.println("              0 - Sair                             ");
 		System.out.println("                                                   ");
 		System.out.println("___________________________________________________");
@@ -94,6 +95,12 @@ public class Menu {
 				keyPress();
 				break;
 			
+			case 6:
+				System.out.println(Cores.TEXT_CYAN_BOLD + "\n\n      Opção - Listar Itens por Categoria    "+ Cores.TEXT_RESET);
+				listarPorCategoria();
+				keyPress();
+				break;	
+			
 			default: 
 				System.out.println(Cores.TEXT_CYAN_BOLD + "\n\n      Opção Inválida     "+ Cores.TEXT_RESET);
 				keyPress();
@@ -122,6 +129,7 @@ public class Menu {
 	public static void criarItensTeste() {
 		itensController.cadastrarItem(new BodyCare(ItensController.gerarId(), 71.00f, "Sérum corporal", 1, "Flores", "Hidratante"));
 		itensController.cadastrarItem(new SkinCare(ItensController.gerarId(), 50.00f, "Azelan", 2, "Tratamento", "Pele acneica", "Ácido azelaico e Hidratante"));
+		itensController.cadastrarItem(new Maquiagem(ItensController.gerarId(), 50.00f, "Contorno facial", 3, "Pele"));
 	}
 	
 	private static void listarItens() {
@@ -277,4 +285,15 @@ public class Menu {
 			System.out.printf("\nA conta número %d não foi encontrada!", numID);
 		}
 	}
+	
+	private static void listarPorCategoria() {
+	    System.out.println("1 - BodyCare");
+	    System.out.println("2 - SkinCare");
+	    System.out.println("3 - Maquiagens");
+	    System.out.print("Escolha a categoria: ");
+	    int categoria = input.nextInt();
+	    input.nextLine();
+	    itensController.listarPorCategoria(categoria);
+    }
+		
 }

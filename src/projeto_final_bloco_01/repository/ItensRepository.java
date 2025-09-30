@@ -11,5 +11,6 @@ public interface ItensRepository {
 	public void atualizar(Itens id);
 	public void apagarItem(int id);
 	
-	
+	// Métodos específicos
+	public void listarPorCategoria(int categoria);
 }
