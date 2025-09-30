@@ -21,6 +21,6 @@ public class Maquiagem extends Itens{
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Categoria pertencente do Item (Base | Blus | Pó | Batons | Corretivos | Paletas): " + this.categoria);
+		System.out.println("Categoria pertencente do Item (Olhos | Pele | Boca): " + this.categoria);
 	}
 }

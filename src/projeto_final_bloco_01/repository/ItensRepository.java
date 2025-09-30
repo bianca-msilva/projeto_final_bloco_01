@@ -6,9 +6,9 @@ public interface ItensRepository {
 	
 	// Métodos CRUD
 	public void cadastrarItem(Itens item);
-	public void listarItens(Itens item);
+	public void listarItens();
 	public void buscarItemPorId(int id);
-	public void atualizar(int id);
+	public void atualizar(Itens id);
 	public void apagarItem(int id);
 	
 	

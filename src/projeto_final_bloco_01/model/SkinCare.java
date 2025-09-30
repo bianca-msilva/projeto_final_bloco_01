@@ -39,7 +39,7 @@ public class SkinCare extends Itens{
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println("Necessidade do cliente: " + this.necessidade);
+		System.out.println("Necessidade atendida: " + this.necessidade);
 		System.out.println("Ativos do Item: " + this.ativos);
 		System.out.println("Categoria pertencente do Item (Hidratante | Limpeza | Tratamento): " + this.categoria);
 	}
