@@ -51,7 +51,7 @@ public class ItensController implements ItensRepository{
 	}
 
 	@Override
-	public void apagarItem(int id) {
+	public void apagarItem(int numId) {
 		var item = buscarNaCollection(numId); 
 		
 		if(item != null) {
