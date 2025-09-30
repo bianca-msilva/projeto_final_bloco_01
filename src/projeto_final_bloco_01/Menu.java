@@ -2,6 +2,9 @@ package projeto_final_bloco_01;
 
 import java.util.Scanner;
 
+import projeto_final_bloco_01.model.BodyCare;
+import projeto_final_bloco_01.model.Maquiagem;
+import projeto_final_bloco_01.model.SkinCare;
 import projeto_final_bloco_01.util.Cores;
 
 public class Menu {
@@ -10,6 +13,15 @@ public class Menu {
 	public static void main(String[] args) {
 		
 		int opcao;
+		
+		SkinCare novoItem = new SkinCare(123, 50.00f, "Azelan", 2, "Tratamento", "Pele acneica", "ácido azelaico\nhidratante");
+		novoItem.visualizar();
+		
+		BodyCare novoItem2 = new BodyCare(456, 71.00f, "Sérum corporal", 1, "Flores", "Hidratante");
+		novoItem2.visualizar();
+		
+		Maquiagem novaMake = new Maquiagem(789, 100.00f, "Base facial 3 em 1", 3, "Base");
+		novaMake.visualizar();
 		
 		while(true) {
 		System.out.println(Cores.TEXT_CYAN_BOLD +"___________________________________________________");
@@ -69,8 +81,6 @@ public class Menu {
 				break;
 			}
 		}
-		
-		
 		
 	}
 	
